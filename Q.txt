@@ -1,0 +1,33 @@
+Explain event delegation
+Event delegation allows you to avoid adding event listeners to specific nodes;  instead, the event listener is added to one parent.  That event listener analyzes bubbled events to find a match on child elements. 
+
+// Get the element, add a click listener...
+document.getElementById("parent-list").addEventListener("click", function(e) {
+	// e.target is the clicked element!
+	// If it was a list item
+	if(e.target && e.target.nodeName == "LI") {
+		// List item found!  Output the ID!
+		console.log("List item ", e.target.id.replace("post-", ""), " was clicked!");
+	}
+});
+
+
+With bubbling, the event is first captured and handled by the innermost element and then propagated to outer elements.
+
+With capturing, the event is first captured by the outermost element and propagated to the inner elements.
+
+
+//Prototype inheritance
+--
+
+Module Loader
+-------------
+Usually, JS files are loaded in order via script tag in HTML templates, but files and code gets complicated once an application becomes large. Javascript module loaders lets us separate our code into modules and include a specific module in another module. This lets us import what module is required and load only the necessary. Better Javascript file size load and better code compartmentalization, means, JS module loader mitigates away the danger of global-namespace issue.
+
+CommonJS is a way of defining modules with the help of an exports object, that defines the module contents. Simply put, a CommonJS implementation might work like this:
+
+AMD is more suited for the browser, because it supports asynchronous loading of module dependencies.
+
+RequireJS is an implementation of AMD, while at the same time trying to keep the spirit of CommonJS (mainly in the module identifiers).
+
+Singleton pattern --

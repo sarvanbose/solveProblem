@@ -7,7 +7,7 @@ var b = String("hello");
 typeof b; //string
 b.length;
 
-b.indexOf("h");
+b.indexOf("h"); - its case sensitive
 b.lastIndexOf("l");
 b.charAt(0);
 b.charCodeAt(0);
@@ -37,6 +37,23 @@ str.substring(5, 0);
 str.substring(6, str.length);
 str.substring(6);
 
+/* Sub Str 
+  2nd argument is the length.
+*/
+
+var str = "Canal";
+str.substr(2, 3);
+
+/* 
+var str = "Canal";
+str.substr(2, 3);    // 2nd argument is the length
+"nal"
+
+var str = "Canal";
+str.substring(2, 3); // 2nd argument is the index to stop.
+"n"
+*/
+
 /* Split()
 	Separator -  Specifies the character(s) to use for separating the string. If separator is an empty string, str is converted to an array of characters.
 	Limit -    Integer specifying a limit on the number of splits to be found
@@ -60,6 +77,7 @@ var strReverse = str.split('').reverse().join('');
 var str = "HelloWorld!";
 str.search('Hello'); // 0
 
+
 /*
 	The includes() method determines whether one string may be found within another string, returning true or false as appropriate.	
 	The includes() method is case sensitive. For example, the following expression returns false:
@@ -71,3 +89,7 @@ console.log(str.includes('To be'));       // true
 console.log(str.includes('question'));    // true
 console.log(str.includes('nonexistent')); // false
 
+
+//Replace()
+var str = "Apples are round, apples are juicy";
+var aaaa = str.replace(/Apples/gi, 'oranges');
